@@ -1,0 +1,1353 @@
+/* =========================================
+   1. VARIABLES DE COLOR (Paleta Oficial)
+   ========================================= */
+:root {
+    --crema: #F6E6A6;
+    --rosa: #F29DC1;
+    --azul-claro: #39A8E0;
+    --naranja: #EE751E;
+    --azul-oscuro: #2C2E7D;
+    --blanco: #FFFFFF;
+}
+
+/* =========================================
+   2. CARGA DE FUENTES
+   ========================================= */
+@font-face {
+    font-family: 'Gliker';
+    src: url('fuentes/gliker-regular.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* =========================================
+   3. ESTILOS GENERALES Y RESET
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--crema);
+    color: var(--azul-oscuro);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+    line-height: 1.6;
+}
+
+/* =========================================
+   4. NAVEGACIÓN (Navbar)
+   ========================================= */
+.navbar {
+    background-color: var(--blanco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar a {
+    font-family: 'Gliker', sans-serif !important;
+    text-decoration: none;
+    color: var(--azul-oscuro);
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--rosa);
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+    transition: transform 0.3s;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+.btn-destacado {
+    background-color: var(--azul-oscuro);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+.btn-destacado:hover {
+    background-color: var(--azul-claro);
+}
+
+/* =========================================
+   5. SECCIÓN HERO (Inicio)
+   ========================================= */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 80px 10%;
+    min-height: 80vh;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.eslogan-principal {
+    font-family: 'Gliker', sans-serif !important;
+    font-size: 4.5rem;
+    line-height: 1.1;
+    color: var(--azul-oscuro);
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.eslogan-principal span {
+    font-family: 'Gliker', sans-serif !important;
+    color: var(--azul-claro) !important;
+}
+
+.descripcion {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   6. KIMO Y ELEMENTOS INTERACTIVOS
+   ========================================= */
+.hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kimo-hero {
+    width: 400px;
+    filter: drop-shadow(10px 10px 0px var(--rosa)); 
+    transition: 0.4s ease;
+}
+
+.kimo-hero:hover {
+    transform: scale(1.05) rotate(-3deg);
+}
+
+.speech-bubble {
+    font-family: 'Gliker', sans-serif !important;
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    background: white;
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: 3px solid var(--azul-oscuro);
+    color: var(--azul-oscuro);
+    box-shadow: 5px 5px 0px var(--naranja);
+    animation: flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* =========================================
+   7. BOTONES Y ACCIONES
+   ========================================= */
+.btn-naranja {
+    font-family: 'Gliker', sans-serif !important;
+    background-color: var(--naranja);
+    color: white;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 12px;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.btn-naranja:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(238, 117, 30, 0.3);
+}
+
+.btn-secundario {
+    font-family: 'Gliker', sans-serif !important;
+    text-decoration: none;
+    color: var(--azul-oscuro);
+    margin-left: 20px;
+    border-bottom: 4px solid var(--rosa);
+    transition: 0.3s;
+}
+
+.btn-secundario:hover {
+    color: var(--rosa);
+}
+/* =========================================
+   PIE DE PÁGINA (Footer) - ACTUALIZADO
+   ========================================= */
+.footer {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    padding: 60px 0 40px;
+    margin-top: auto; /* Empuja el footer al fondo si hay poco contenido */
+    width: 100%;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    padding: 0 5%;
+    align-items: start;
+    text-align: center;
+}
+
+.logo-footer {
+    height: 70px;
+    width: auto;
+    margin: 0 auto 15px;
+    display: block;
+}
+
+/* Estilo para el link de la ONU (ODS 4) */
+.link-ods {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--crema); /* Color crema para resaltar */
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border-bottom: 2px solid var(--rosa); /* Línea decorativa rosa */
+    transition: 0.3s ease;
+}
+
+.link-ods:hover {
+    color: var(--rosa);
+    border-bottom-color: var(--crema);
+}
+
+.footer h3 {
+    font-family: 'Gliker', sans-serif !important;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--rosa); /* Títulos en rosa para contraste */
+}
+
+.footer p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Icono de Video para Reel */
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icons a {
+    color: var(--blanco) !important;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s ease;
+}
+
+.social-icons i {
+    font-size: 3.5rem; /* Icono grande de play */
+    margin-bottom: 5px;
+}
+
+.label-video {
+    font-family: 'Gliker', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.social-icons a:hover {
+    color: var(--crema) !important;
+    transform: scale(1.1);
+}
+
+/* Copyright Final */
+.footer-copy {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 25px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Ajuste para Celulares */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+        gap: 40px;
+    }
+}
+/* =========================================
+   PÁGINA NOSOTROS (Versión Unificada y Corregida)
+   ========================================= */
+.nosotros-page {
+    padding: 60px 10%; /* Reducido para que no flote tanto */
+    background-color: var(--crema);
+}
+
+/* CONTENEDOR DEL ENCABEZADO */
+.nosotros-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px; /* Espacio total antes de Quiénes Somos */
+}
+
+/* TÍTULO PRINCIPAL */
+.nosotros-header h1 {
+    font-family: 'Gliker', sans-serif !important;
+    font-size: 4rem;
+    color: var(--azul-oscuro);
+    margin-bottom: 0; /* ELIMINA el espacio de abajo */
+}
+
+.nosotros-header h1 span {
+    color: var(--rosa);
+}
+
+/* SUBTÍTULO (Transformando el caos...) */
+.subtitulo {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--azul-oscuro);
+    margin-top: -10px !important; /* SUBE el texto para pegarlo al título */
+    text-align: center;
+}
+
+/* CONTENEDOR DE CONTENIDO (2 COLUMNAS) */
+.nosotros-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* TÍTULO ¿QUIÉNES SOMOS? */
+.titulo-interrogacion {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-weight: 800;
+    font-size: 2.8rem;
+    color: var(--azul-oscuro);
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+/* IMAGEN CON STICKER */
+.sticker-frame {
+    background: white;
+    padding: 15px;
+    border: 3px solid var(--azul-oscuro);
+    border-radius: 20px;
+    box-shadow: 10px 10px 0px var(--naranja);
+    transform: rotate(2deg);
+}
+
+/* SECCIÓN ODS 4 */
+.ods-section {
+    background-color: var(--blanco);
+    border: 3px solid var(--azul-oscuro);
+    border-radius: 30px;
+    padding: 50px;
+    margin-top: 60px;
+    box-shadow: 10px 10px 0px var(--azul-claro); /* Sombra de color azul claro */
+}
+
+.ods-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.ods-badge {
+    flex: 0 0 200px; /* Tamaño fijo para el espacio de la imagen */
+}
+
+.ods-img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.ods-text {
+    flex: 1;
+}
+
+.ods-text h2 span {
+    color: var(--azul-claro);
+}
+
+.ods-desc-corta {
+    font-style: italic;
+    color: var(--azul-oscuro);
+    margin-top: 15px;
+    border-left: 4px solid var(--rosa);
+    padding-left: 15px;
+}
+
+/* Responsivo para celulares */
+@media (max-width: 768px) {
+    .ods-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .ods-badge {
+        flex: 0 0 auto;
+        width: 150px;
+        margin-bottom: 20px;
+    }
+}
+/* SECCIÓN PILARES */
+.pilares-section {
+    padding: 80px 0;
+}
+
+.text-center {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.pilares-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+.pilar-card {
+    background: var(--blanco);
+    padding: 40px 30px;
+    border-radius: 25px;
+    border: 3px solid var(--azul-oscuro);
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 8px 8px 0px var(--rosa); /* Sombra estilo sticker */
+}
+
+.pilar-card:hover {
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 12px 12px 0px var(--naranja); /* Cambia de color al pasar el mouse */
+}
+
+.pilar-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.pilar-card h3 {
+    font-family: 'Gliker', sans-serif !important;
+    color: var(--azul-oscuro);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.pilar-card p {
+    font-size: 1.1rem;
+    color: var(--azul-oscuro);
+    line-height: 1.5;
+}
+
+/* Título de la sección más grande */
+.pilares-section h2 {
+    font-size: 3.5rem; /* Más grande para que combine con 'Nuestra Historia' */
+    margin-bottom: 60px;
+}
+
+/* Tarjetas con bordes de colores distintos (opcional pero recomendado) */
+.pilar-card:nth-child(1) { box-shadow: 10px 10px 0px var(--rosa); }    /* Empatía - Rosa */
+.pilar-card:nth-child(2) { box-shadow: 10px 10px 0px var(--naranja); } /* Creatividad - Naranja */
+.pilar-card:nth-child(3) { box-shadow: 10px 10px 0px var(--azul-claro); } /* Calidad - Azul */
+
+.pilar-emoji {
+    font-size: 4rem; /* Emojis más grandes */
+    display: block;
+    margin-bottom: 20px;
+}
+
+.pilar-card h3 {
+    font-size: 2rem; /* Títulos de tarjeta más legibles */
+    margin-top: 10px;
+}
+
+.pilar-card p {
+    font-size: 1.15rem;
+    line-height: 1.4;
+    padding: 0 10px;
+}
+.footer {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    padding: 60px 0 40px; /* Quitamos el 10% lateral para que no se encoja */
+    margin-top: 80px;
+    width: 100vw; /* Ocupa el 100% del ancho de la ventana */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px; /* Centra el contenido interno */
+    margin: 0 auto 50px;
+    padding: 0 5%;
+    align-items: start;
+    text-align: center;
+}
+/* =========================================
+   PÁGINA DE KIMO
+   ========================================= */
+.kimo-page {
+    padding: 60px 10%;
+}
+
+.kimo-intro {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 80px;
+    background: white;
+    padding: 50px;
+    border-radius: 40px;
+    border: 3px solid var(--azul-oscuro);
+    box-shadow: 12px 12px 0px var(--naranja);
+}
+
+.kimo-big {
+    width: 350px;
+    filter: drop-shadow(5px 5px 0px var(--rosa));
+}
+
+.kimo-badge {
+    background: var(--azul-oscuro);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: 'Gliker', sans-serif;
+    display: inline-block;
+    margin-top: -20px;
+    transform: rotate(-5deg);
+}
+/* CAMBIO: Estilo de Sticker en lugar de Botón */
+.sticker-label {
+    background: transparent;
+    color: var(--azul-oscuro);
+    border: 2px dashed var(--rosa); /* Borde punteado para que parezca un adhesivo */
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-family: 'Gliker', sans-serif;
+    display: inline-block;
+    margin-top: -20px;
+    transform: rotate(-5deg); /* Inclinación "manual" */
+    font-size: 1rem;
+    pointer-events: none; /* Esto evita que el mouse crea que se puede clickear */
+    box-shadow: none; /* Quitamos sombras pesadas que inciten al click */
+}
+.kimo-stats {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stat-item {
+    background: var(--crema);
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: 2px solid var(--azul-oscuro);
+    font-weight: bold;
+}
+
+/* GRID DE EMOCIONES */
+.emociones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.emocion-card {
+    padding: 30px;
+    border-radius: 30px;
+    border: 3px solid var(--azul-oscuro);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.emocion-card:hover {
+    transform: scale(1.05);
+}
+
+.emocion-card .emoji { font-size: 3rem; }
+.emocion-card.rosa { background: #ffe6f0; }
+.emocion-card.azul { background: #e1f5fe; }
+.emocion-card.naranja { background: #fff3e0; }
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .kimo-intro {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* =========================================
+   NUEVOS ESTILOS PARA LA GALERÍA DE KIMO
+   ========================================= */
+
+/* Subtítulo opcional para la galería */
+.subtitulo-galeria {
+    font-size: 1.2rem;
+    color: var(--azul-oscuro);
+    margin-top: -30px;
+    margin-bottom: 50px;
+    opacity: 0.8;
+}
+
+/* Contenedor visual dentro de la tarjeta */
+.kimo-mood-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 200px; /* Altura fija para que todas las imágenes alineen */
+}
+
+/* La imagen de Kimo dentro de la tarjeta */
+.kimo-mood-img {
+    max-height: 100%; /* Se ajusta al alto del contenedor */
+    width: auto;
+    filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.1)); /* Sombra suave */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover en la imagen al pasar por la tarjeta */
+.emocion-card:hover .kimo-mood-img {
+    transform: scale(1.1) rotate(2deg);
+}
+
+/* El emoji flotando cerca de Kimo */
+.mood-emoji {
+    position: absolute;
+    bottom: -10px;
+    right: 10px;
+    font-size: 2.5rem;
+    background: white;
+    padding: 5px;
+    border-radius: 50%;
+    border: 2px solid var(--azul-oscuro);
+    box-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+}
+/* Contenedor principal para centrar todo */
+.hero-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo del botón */
+.btn-portafolio {
+    display: inline-block;
+    margin-top: 25px; /* Espacio con el texto de arriba */
+    padding: 12px 35px;
+    background-color: #b08d44; /* Dorado corporativo */
+    color: #ffffff !important; /* Texto blanco */
+    text-decoration: none !important; /* Quita el subrayado morado */
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+    transition: all 0.3s ease;
+    border: 2px solid #b08d44;
+}
+
+/* Efecto al pasar el mouse */
+.btn-portafolio:hover {
+    background-color: transparent;
+    color: #b08d44 !important;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+}
+/* =========================================
+   ESTILOS ESPECÍFICOS PARA: EL KIT
+   ========================================= */
+
+/* Contenedor principal de la página */
+.kit-page {
+    padding: 80px 10%;
+    background-color: var(--crema);
+}
+
+/* Encabezado del Kit */
+.kit-hero {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.kit-hero .subtitulo {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.3rem;
+    color: var(--azul-oscuro);
+    opacity: 0.9;
+}
+
+/* Grid de productos (Layout en Zigzag) */
+.kit-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Espacio entre cada producto */
+}
+
+/* Tarjeta de producto individual */
+.kit-item {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    background: var(--blanco);
+    padding: 50px;
+    border-radius: 40px;
+    border: 3px solid var(--azul-oscuro);
+    transition: transform 0.3s ease;
+    /* Sombra inicial (Azul Claro) */
+    box-shadow: 15px 15px 0px var(--azul-claro);
+}
+
+/* Efecto Zigzag: Los elementos pares invierten su orden */
+.kit-item:nth-child(even) {
+    flex-direction: row-reverse;
+    /* Sombra alterna (Rosa) */
+    box-shadow: -15px 15px 0px var(--rosa);
+}
+
+.kit-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Contenedor de la imagen del producto */
+.kit-image-container {
+    flex: 1;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 3px solid var(--azul-oscuro);
+    background: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kit-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.kit-item:hover .kit-image-container img {
+    transform: scale(1.08);
+}
+
+/* Información del producto (Texto) */
+.kit-info {
+    flex: 1;
+}
+
+/* Etiquetas (Tags) de categoría */
+.tag {
+    display: inline-block;
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-family: 'Gliker', sans-serif;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border: 2px solid var(--azul-oscuro);
+    color: var(--blanco);
+}
+
+.tag.azul { background-color: var(--azul-claro); }
+.tag.rosa { background-color: var(--rosa); }
+.tag.naranja { background-color: var(--naranja); }
+
+.kit-info h3 {
+    font-family: 'Gliker', sans-serif !important;
+    font-size: 2.5rem;
+    color: var(--azul-oscuro);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.kit-info p {
+    font-size: 1.15rem;
+    color: var(--azul-oscuro);
+    line-height: 1.6;
+}
+
+/* Banner de Llamado a la Acción (CTA) */
+.kit-cta {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    padding: 100px 50px;
+    border-radius: 50px;
+    text-align: center;
+    margin-top: 100px;
+    border: 5px solid var(--rosa);
+    box-shadow: 0 20px 40px rgba(44, 46, 125, 0.3);
+}
+
+.kit-cta h2 {
+    font-family: 'Gliker', sans-serif !important;
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+}
+
+.kit-cta p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 992px) {
+    .kit-item, .kit-item:nth-child(even) {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px;
+        gap: 30px;
+    }
+
+    .kit-item:nth-child(even) {
+        box-shadow: 15px 15px 0px var(--rosa);
+    }
+
+    .kit-info h3 {
+        font-size: 2rem;
+    }
+}
+/* =========================================
+   PÁGINA OBTENER EL KIT
+   ========================================= */
+.obtener-page {
+    padding: 80px 10%;
+    background-color: var(--crema);
+}
+
+.obtener-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Contenedor de Pasos */
+.pasos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.paso-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 30px;
+    border: 3px solid var(--azul-oscuro);
+    text-align: center;
+    position: relative;
+    box-shadow: 8px 8px 0px var(--naranja);
+}
+
+.paso-numero {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--rosa);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gliker', sans-serif;
+    font-size: 1.5rem;
+    border: 3px solid var(--azul-oscuro);
+}
+
+/* Sección Formulario */
+.formulario-seccion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    background: white;
+    padding: 60px;
+    border-radius: 40px;
+    border: 3px solid var(--azul-oscuro);
+    box-shadow: 15px 15px 0px var(--azul-oscuro);
+}
+
+.form-info h2 {
+    font-family: 'Gliker', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contacto-directo {
+    margin-top: 30px;
+}
+
+.contacto-directo p {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.contacto-directo i {
+    color: var(--rosa);
+    margin-right: 10px;
+}
+
+/* Estilos del Formulario */
+.kit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-weight: bold;
+    color: var(--azul-oscuro);
+}
+
+.input-group input, .input-group select {
+    padding: 12px 15px;
+    border: 2px solid var(--azul-oscuro);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--rosa);
+}
+
+/* Responsivo */
+@media (max-width: 850px) {
+    .formulario-seccion {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
+}
+/* =========================================
+   AJUSTES ESPECÍFICOS PARA MÓVIL (Pixel 7)
+   ========================================= */
+@media (max-width: 412px) { /* Ancho exacto del Pixel 7 */
+    
+    /* 1. Reducir el título principal para que no ocupe toda la pantalla */
+    .titulo-estandar {
+        font-size: 1.8rem !important;
+        line-height: 1.2;
+    }
+
+    /* 2. Kimo y su Bio: De lado a lado a arriba y abajo */
+    .kimo-intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .kimo-big {
+        width: 80%; /* Kimo un poco más pequeño para dejar aire */
+        margin-bottom: 20px;
+    }
+
+    /* 3. Las tarjetas del Kit: Una debajo de otra */
+    .kit-grid, .emociones-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Una sola columna */
+        gap: 20px;
+        padding: 15px;
+    }
+
+    /* 4. Ajustar el sticker de "Tu guía emocional" */
+    .sticker-label {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+        margin-top: -10px;
+    }
+
+    /* 5. El Footer en móvil */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+}
+/* Ajustes para pantallas pequeñas (Celulares) */
+@media (max-width: 768px) {
+    
+    /* Navbar: Alinea el logo y los links en vertical o reduce su tamaño */
+    .navbar {
+        flex-direction: column;
+        padding: 15px 10px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap; /* Permite que los links bajen si no caben */
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
+        padding: 0;
+    }
+
+    .nav-links li a {
+        font-size: 14px; /* Un poco más pequeño para que quepa todo */
+    }
+
+    /* Hero Section: Ajuste de textos */
+    .hero h1, .kit-hero h1 {
+        font-size: 2.2rem !important; /* Reduce el tamaño del título principal */
+        line-height: 1.1;
+        margin-bottom: 15px;
+    }
+
+    .hero p, .subtitulo {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    /* Botones: Asegura que no se peguen en móvil */
+    .hero-btns {
+        display: flex;
+        flex-direction: column; /* Botones uno sobre otro para mejor acceso táctil */
+        gap: 15px;
+        align-items: center;
+    }
+
+    /* Imágenes: Evita que Kimo se corte o se vea gigante */
+    .kimo-big, .hero-image img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+/* =========================================
+   REPARACIÓN SECCIÓN "NOSOTROS" (Móvil)
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* 1. Ajuste de Títulos en Nosotros */
+    /* Evita que "Nuestra Historia" se vea gigante y se amontone */
+    .kit-hero h1, 
+    .nosotros-hero h1 {
+        font-size: 2.2rem !important; 
+        line-height: 1.1 !important;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    /* 2. Ajuste del Subtítulo */
+    .subtitulo {
+        font-size: 1rem !important;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    /* 3. Sección "¿Quiénes somos?" */
+    /* Cambia de horizontal a vertical para que el texto tenga espacio */
+    .quienes-somos-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .quienes-somos-texto {
+        width: 100% !important;
+        text-align: left; /* Mantiene la lectura cómoda */
+    }
+
+    /* 4. Arreglo de la imagen lateral */
+    /* Evita que la imagen del Kit o de los estudiantes se corte */
+    .quienes-somos-imagen {
+        width: 90% !important;
+        max-width: 300px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* 5. Espaciado general */
+    section {
+        padding: 40px 15px !important;
+    }
+
+    /* 6. Footer (Ajuste para que no se vea apretado) */
+    .footer-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+}
+
+/* Ajuste extra para el Pixel 7 (pantallas muy estrechas) */
+@media (max-width: 412px) {
+    .titulo-estandar span {
+        display: block; /* Pone "Historia" debajo de "Nuestra" si es necesario */
+    }
+    
+    p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+}
+/* =========================================
+   SOLUCIÓN DEFINITIVA PARA MÓVIL (Pixel 7)
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* 1. Arreglo de Navegación amontonada */
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .nav-links {
+        gap: 10px;
+        margin-top: 10px;
+        justify-content: center;
+        width: 100%;
+    }
+    .nav-links li a {
+        font-size: 13px;
+    }
+    .btn-destacado {
+        padding: 5px 12px;
+        font-size: 12px;
+    }
+
+    /* 2. Arreglo de Títulos (Nuestra Historia / Contenido del Kit) */
+    .nosotros-header h1, 
+    .titulo-estandar,
+    .kit-hero h1 {
+        font-size: 2.2rem !important; /* Tamaño manejable */
+        line-height: 1.1 !important;
+        padding: 0 10px;
+        display: block;
+    }
+
+    .nosotros-header h1 span, 
+    .titulo-estandar span {
+        display: block; /* Obliga a la segunda palabra a bajar para no romperse */
+        font-size: 2.2rem;
+    }
+
+    /* 3. Arreglo de la sección Nosotros (Contenido) */
+    .nosotros-content {
+        grid-template-columns: 1fr; /* Una sola columna */
+        padding: 20px 5%;
+        text-align: center;
+    }
+
+    .titulo-interrogacion {
+        font-size: 2rem !important;
+    }
+
+    /* 4. Arreglo de las tarjetas del KIT (Zigzag) */
+    .kit-item, 
+    .kit-item:nth-child(even) {
+        flex-direction: column !important; /* Siempre vertical */
+        padding: 25px !important;
+        margin-bottom: 30px;
+        box-shadow: 10px 10px 0px var(--azul-claro) !important; /* Sombra fija */
+    }
+
+    .kit-info h3 {
+        font-size: 1.8rem !important;
+        margin-top: 15px;
+    }
+
+    .kit-image-container {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    /* 5. ODS Section (Ajuste de caja blanca) */
+    .ods-section {
+        padding: 25px;
+        margin: 40px 10px;
+    }
+    .ods-container {
+        flex-direction: column;
+    }
+    .ods-badge {
+        width: 120px;
+    }
+}
+/* =========================================
+   SOLUCIÓN FORZOSA PARA NOSOTROS (Móvil)
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* 1. Forzar Títulos Ordenados (Nuestra Historia) */
+    .nosotros-header h1, 
+    .titulo-estandar {
+        font-size: 2.2rem !important;
+        line-height: 1.1 !important;
+        text-align: center !important;
+        display: block !important;
+        width: 100% !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* Obliga a 'Historia' a bajar y centrarse */
+    .nosotros-header h1 span, 
+    .titulo-estandar span {
+        display: block !important;
+        color: var(--rosa) !important;
+        font-size: 2.2rem !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    /* 2. Forzar Contenido Vertical y Centrado */
+    .nosotros-content {
+        display: flex !important;
+        flex-direction: column !important; /* Arriba/Abajo */
+        align-items: center !important;
+        padding: 20px 5% !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+
+    /* 3. Forzar Texto Ancho Completo */
+    .quienes-somos-texto {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: center !important; /* O left, si prefieres */
+    }
+
+    .titulo-interrogacion {
+        font-size: 2rem !important;
+        text-align: center !important;
+    }
+
+    /* 4. Forzar Imagen Contenida */
+    .quienes-somos-imagen, 
+    .sticker-frame {
+        width: 100% !important;
+        max-width: 300px !important; /* Tamaño máx de la maleta */
+        margin: 20px auto 0 !important;
+        display: block !important;
+        transform: none !important; /* Quita rotaciones si molestan */
+    }
+}
+/* =========================================
+   REPARACIÓN DE LA IMAGEN "NOSOTROS" (Móvil)
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* 1. Forzamos el contenedor para que no tenga desbordamiento */
+    .quienes-somos-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        padding: 0 !important;
+        overflow: hidden !important; /* Corta cualquier sombra rebelde */
+    }
+
+    /* 2. Ajuste estricto de la imagen */
+    .quienes-somos-imagen, 
+    .sticker-frame img {
+        width: 85% !important; /* Ocupa casi todo el ancho */
+        max-width: 320px !important; /* Pero no más de esto */
+        height: auto !important;
+        display: block !important;
+        margin: 20px auto !important; /* Centrado automático lateral */
+        
+        /* ESTO ES LO MÁS IMPORTANTE: */
+        transform: translateX(-10px) !important; /* Empuja la imagen hacia la IZQUIERDA */
+        /* Ajusta el valor (-10px) hasta que veas la maleta centrada */
+    }
+
+    /* Opcional: Si la caja blanca tiene sombra, la quitamos para evitar desbordamiento */
+    .sticker-frame {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        background: transparent !important;
+    }
+}
+@media (max-width: 768px) {
+    /* 1. Recuperar el contenedor con su borde azul */
+    .sticker-frame {
+        display: block !important;
+        width: 90% !important;      /* Casi todo el ancho de la pantalla */
+        max-width: 340px !important; 
+        margin: 30px auto !important; /* Centra la caja horizontalmente */
+        padding: 15px !important;    /* Espacio interno para que la maleta no toque el borde */
+        border: 2px solid #1D2D6B !important; /* El azul oscuro de Kitopia */
+        border-radius: 20px !important;       /* Esquinas redondeadas */
+        background-color: #FFFFFF !important; /* Fondo blanco */
+        box-shadow: 5px 5px 0px #F4A442 !important; /* Sombra naranja decorativa */
+    }
+
+    /* 2. Ajustar la imagen dentro de la caja */
+    .sticker-frame img, 
+    .quienes-somos-imagen {
+        width: 100% !important;      /* La imagen llena su contenedor */
+        height: auto !important;
+        display: block !important;
+        transform: none !important;  /* Eliminamos desplazamientos raros */
+        margin: 0 auto !important;
+    }
+}
